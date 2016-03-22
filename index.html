@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="name"/>
+<div id="displayNameDiv"></div>
+    
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $("#name").keyup(function () {
+                    $("#displayNameDiv").html("Welcome " + $("#name").val());
+                });
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+    <div  ng-app="myApp">
+      
+       
+        <div ng-controller="firstController">
+            First Controller -- 
+           <!-- <input type=text ng-model='data.message'/>-->
+            {{data}}
+            {{data.reverseMessage()}}
+            <button ng-click="data.reverseMessage()"></button>
+           
+        </div>
+        <br>
+          <div ng-controller="secondController">
+               SEcond Controller -- 
+               <!--<input type=text ng-model='data.message'/>-->
+              {{data}}
+            </div>
+       
+    </div>
+
+    
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script>
+       var app = angular.module('myApp' , []);
+        
+       app.factory('CommonData', function(){
+           var obj = {message: 'Hello',
+                      reverseMessage: function(x){
+                          console.log('function called')
+                      }
+                     }
+           return obj;
+       })    
+        
+       var firstControllerFunction = function($scope, CommonData){
+           $scope.data = CommonData
+           $scope.fName = 'Puneet';
+           console.log($scope)
+       }
+       
+       app.controller('firstController', firstControllerFunction)    
+       
+
+        
+         app.controller('secondController', function($scope, CommonData){
+           $scope.data = CommonData
+           $scope.lName = 'Vashisht'
+           console.log($scope)
+       })    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+    </script>
+    
+</body>
+</html>

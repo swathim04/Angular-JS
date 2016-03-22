@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+    <div  ng-app="myApp">
+        <input type=text ng-model="name"/>
+        {{name}} <br>
+        {{id}}
+        {{flag}}
+        {{data.message}}
+    </div>
+
+    
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        
+        app.run(function($rootScope){
+            $rootScope.name = 'Puneet'
+            $rootScope.id = 34654;
+            $rootScope.flag = true
+            $rootScope.data = {message:'Welcome to AngularJS'}
+        })
+    </script>
+    
+</body>
+</html>

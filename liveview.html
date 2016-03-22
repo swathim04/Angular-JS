@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+    <div  ng-app="myApp">
+      
+       
+        <div ng-controller="AppCtrl">
+            Ajax Response is: {{data.firstName}}
+           <button ng-click='loadData()'>Load Data</button>
+        </div>
+        
+
+    
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script>
+       var app = angular.module('myApp' , []);
+
+        
+         app.controller('AppCtrl', function($scope, $http){
+           
+             $scope.loadData = function(){
+                 /*$.ajax({
+                     url: 'dummy.json',
+                     type: 'GET'
+                 }).success(function(result){
+                     console.log(result)
+                     $scope.data = result
+                     $scope.$apply();
+                 })*/
+                 
+                 $http({
+                     url: 'dummy.json',
+                     method: 'GET'
+                 }).success(function(result){
+                     console.log(result)
+                     $scope.data = result
+                 })
+             }
+       })    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation-flex.css"/>
+</head>
+<body>
+    
+    <div  ng-app="myApp" ng-controller='AppCtrl'>
+        <input type=text ng-model="x"/>
+      {{ x | reverse}}
+    </div>
+
+    
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        
+        app.filter('reverse', function(){
+            return function(input){
+                if(input){
+                    console.log('Filter Called' + input);
+//                    return input.split('').reverse().join('');
+                    return input[0].toUpperCase() + input.slice(1); 
+                }
+                
+            }
+        })
+        
+        app.controller('AppCtrl', function($scope){
+            $scope.somestring = 'Hyderabad is hot'
+            $scope.arr = ['b', 'a', 'c', 'd']
+            $scope.employees = [{
+                name: 'Ravi',
+                role: 'IT',
+                status: 1
+            },
+                               {
+                name: 'Priya',
+                role: 'Finance',
+                status: 1
+            },
+                                {
+                name: 'Amit',
+                role: 'HR',
+                status: 0
+            },
+                               {
+                name: 'Sonia',
+                role: 'IT',
+                status: 0
+            }]
+            
+        })
+        
+    </script>
+    
+</body>
+</html>
