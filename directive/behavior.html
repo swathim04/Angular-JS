@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.css" />
+</head>
+<body>
+    
+    <div  ng-app="myApp">     
+        
+         <div cg-comp mystyle="panel"></div>
+              <div cg-comp mystyle="button"></div>
+         
+        <div ng-controller="AppCtrl">
+            
+           
+            
+        </div>  
+  
+    </div>
+    
+    
+
+    
+    <script type="text/javascript" src="../lib/angular/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        
+        app.controller('AppCtrl', function($scope){
+           console.log($scope)
+        })
+        
+        app.directive('cgComp', function(){
+            return {
+                restrict: 'A',
+                template: '<h2>Some Text</h2>',
+                link: function(scope, element, attrs){
+                    console.log(scope)
+                    console.log(element)
+                    console.log(attrs)
+                    element.bind('mouseenter', function(){
+                        console.log('Mouse Entered')
+                        element.addClass(attrs.mystyle)
+                    })
+                     element.bind('mouseleave', function(){
+                        console.log('Mouse Entered')
+                        element.removeClass(attrs.mystyle)
+                        
+                    })
+                }
+            }
+        })
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>

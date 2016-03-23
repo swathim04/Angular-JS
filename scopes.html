@@ -7,22 +7,23 @@
 <body>
     
     <div  ng-app="myApp">
-      
-       
+      {{init()}}
+       <input type=text ng-model="title"/>
+        
         <div ng-controller="firstController">
             First Controller -- 
            <!-- <input type=text ng-model='data.message'/>-->
-            {{data}}
-            {{data.reverseMessage()}}
-            <button ng-click="data.reverseMessage()"></button>
-           
-        </div>
-        <br>
-          <div ng-controller="secondController">
+           {{title}} {{fName}}
+            <div ng-controller="secondController">
                SEcond Controller -- 
                <!--<input type=text ng-model='data.message'/>-->
-              {{data}}
+              {{title}} {{fName}} {{lName}}
             </div>
+            
+        </div>
+         <br>
+        
+               
        
     </div>
 
@@ -31,27 +32,34 @@
     <script>
        var app = angular.module('myApp' , []);
         
-       app.factory('CommonData', function(){
+       app.run(function($rootScope){
+            
+            
+        })
+        
+       /*app.factory('CommonData', function(){
            var obj = {message: 'Hello',
                       reverseMessage: function(x){
                           console.log('function called')
                       }
                      }
            return obj;
-       })    
+       })    */
         
-       var firstControllerFunction = function($scope, CommonData){
-           $scope.data = CommonData
-           $scope.fName = 'Puneet';
-           console.log($scope)
-       }
+      
        
-       app.controller('firstController', firstControllerFunction)    
+       app.controller('firstController', function($rootScope, $scope){
+          $rootScope.init = function(){
+                $rootScope.title = 'Mr.'
+            }
+//           $scope.fName = 'Puneet';
+           console.log($scope)
+       })    
        
 
         
-         app.controller('secondController', function($scope, CommonData){
-           $scope.data = CommonData
+         app.controller('secondController', function($scope){
+
            $scope.lName = 'Vashisht'
            console.log($scope)
        })    

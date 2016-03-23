@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+    
+    <div  ng-app="myApp">     
+         <div ng-controller="AppCtrl">
+            
+            <cg-badge text="Inbox" count="4" step="1"></cg-badge>   
+             <cg-badge text="Message" count="6" step="-2">></cg-badge>
+             <cg-badge text="Sent" count="44" step="3">></cg-badge>
+        </div>  
+        
+        
+        
+    </div>
+    
+    
+
+    
+    <script type="text/javascript" src="../lib/angular/angular.js"></script>
+    <script src="badge.js"> </script>
+    
+</body>
+</html>
