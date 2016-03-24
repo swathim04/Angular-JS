@@ -1,0 +1,12 @@
+[{
+                "title": "AngularJS",
+                "description": "Client side scripting framework"
+            },
+                          {
+                "title": "ReactJS",
+                "description": "Client side scripting framework from Facebook"
+            },
+                          {
+                "title": "NodeJS",
+                "description": "Server side Javascript technology"
+            }]

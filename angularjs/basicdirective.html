@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Js</title>
+    </head>
+    <body>
+        <div ng-app="testApp" ng-controller='Appctrl' >
+            
+          <!--<cg-link></cg-link>   
+          <cg-link/>-->
+         
+          <div cg-link></div>
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>    
+        <script>
+            
+             
+             var app = angular.module('testApp', []);
+             app.directive('cgLink' , function(){
+                 return{
+                     restrict:'A', //Atribute
+                                   // E Element 
+                                // AE or EA 
+                     replace : true, // Replace the Element in Inspect
+                     template:'<a href="http://google.com">Google</a>'
+                 }
+                 
+             })
+             
+             app.controller('Appctrl',function($scope){
+                 
+           
+        })
+             // getbootstrap.com  -- Badge Component   
+        </script>
+        
+       
+    </body>
+</html>

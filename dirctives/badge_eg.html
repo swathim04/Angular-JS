@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Js</title>
+    </head>
+    <body>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <div ng-app="testApp" ng-controller='Appctrl' >
+           
+            ---Controller--
+            <input type=text ng-model="counter"/>
+            
+            
+            ---Directives--
+            
+            <cg-badge text="messages" count="counter"></cg-badge>  
+           
+           
+          </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>    
+        <script>
+                         
+             var app = angular.module('testApp', []);
+            
+              app.controller('Appctrl',function($scope){
+                
+                  $scope.count = 4;
+             })
+                     
+             app.directive('cgBadge' , function(){
+                 
+                 return {
+                     restrict:'A',
+                    /*templateUrl:'partial/link.html',*/
+                     template:'<input type'
+                     /*scope:{
+                            text:'@text', //Pass by value then in dirctives {{ }} use this 
+                            count'@count'
+                          }  //Isolate scopes using this*/
+                     
+                     scope:{
+                            text:'=text', //Pass by reference then in dirctives {{ }} dont use this 
+                            count'=count'
+                     
+                          }  //Isolate scopes using this
+                     
+                    /* link:function(scope,element,attrs){
+                         scope.text = attrs.text;
+                          scope.count = attrs.count;
+                         console.log(scope);
+                     }*/
+                     
+                 }
+                 
+             })
+           
+            
+        </script>
+               
+    </body>
+</html>

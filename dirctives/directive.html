@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Js</title>
+    </head>
+    <body>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <div ng-app="testApp" ng-controller='Appctrl' >
+            
+          <!--<cg-link></cg-link>   
+          <cg-link/>-->
+         
+            <div cg-link></div>
+            <div cg-badge></div>  
+           
+             <input type= text ng-model="count"/>
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>    
+        <script>
+            
+             
+             var app = angular.module('testApp', []);
+            
+              app.controller('Appctrl',function($scope){
+                 //$scope.today = new Date();
+                  $scope.text= Welcome;
+                  $scope.count=4;
+                 
+             })
+            
+             app.directive('cgLink' , function(){
+                 return {
+                     restrict:'A', //Atribute
+                                   // E Element 
+                                // AE or EA  for both
+                     replace : true, // Replace the Element in Inspect
+                     templateUrl:'partial/link.html'
+                 }
+                 
+             })
+             
+             app.directive('cgBadge' , function(){
+                 
+                 return {
+                     restrict:'A',
+                     templateUrl:'partial\badge.html'
+                     
+                 }
+                 
+             })
+           
+             // getbootstrap.com  -- Badge Component  
+             //Foundation cdn js
+             //Angular Batarang
+             //https://docs.angularjs.org/guide/directive
+             //https://docs.angularjs.org/docs
+        </script>
+        
+       
+    </body>
+</html>

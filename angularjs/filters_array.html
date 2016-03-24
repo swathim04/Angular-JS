@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Js</title>
+    </head>
+    <body>
+        <div ng-app="testApp" ng-controller='Appctrl' >
+            
+           <!-- 
+            https://docs.angularjs.org/api/ng/filter    
+           <input type= text ng-model=" firstname "/> 
+            {{ employees | filter:{name:'Ravi'}}} -->
+            
+            <input type=text ng-model="search.name" placeholder="Search By Name"/>
+            <input type=text ng-model="search.role" placeholder="Search By Role"/>
+            <input type=text ng-model="search.status" placeholder="Search By Status"/>
+            <input type=text ng-model="search.$" placeholder="Search All"/>
+
+            
+            <table>
+                <tr ng-repeat="employee in employees | filter:search"> <!-- Search is name of the filter which is whihc can be any thing 
+                                                                            filter is the name of the filter it was predefined -->
+                    <td>{{$index +1 }}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.role}}</td>
+                    <td>{{employee.status}}</td>
+                </tr>
+            </table>
+            
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>    
+        <script>
+            
+             
+             var app = angular.module('testApp', []);
+             app.filter('reverse' , function(){
+                 return function(input){
+                     if(input){
+                           console.log('Filter Called' + input);
+                         return input.split('').reverse().join('');
+                         // return input.charAt(0).toUpperCase();
+                        return input[0].toUpperCase() + input.slice(1);
+                     }
+                 }
+             })
+             
+             app.controller('Appctrl',function($scope){
+                 
+            $scope.employees = 
+                [
+                
+                {name:'Jani',role:'IT', status:1},
+                {name:'John',role:'Finance', status:0},
+                {name:'Amit',role:'admin', status:1},
+                {name:'cogn',role:'IT', status:0},
+                
+            ];
+        })
+             
+        </script>
+        
+       
+    </body>
+</html>
