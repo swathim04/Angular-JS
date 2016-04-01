@@ -1,0 +1,74 @@
+npm config set proxy http://username:password@proxy_host:port
+npm config set proxy http://username:password@proxy_host:port
+
+npm config set strict-ssl false
+
+npm install -g yo
+npm install -g generator-angular
+npm install -g generator-karma
+npm update -g generator-angular
+yo angualr
+
+
+npm install -g karma-jasmine 
+npm update -g karma-jasmine
+npm install jasmine --save
+karma init
+
+
+
+
+
+http://www.awwwards.com/practical-uses-of-angularjs-create-a-single-page-application-spa-or-a-website-menu-in-an-instant.html
+http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html
+
+http://simplyaccessible.com/article/spangular-accessibility/
+
+
+ECMA  JAvascript ES5
+
+ng-leave
+ng-enter
+
+MVC MVVM MVW
+
+
+
+1. Module
+2. MVC MVVM MVW
+3. Expressions {{}}  --- ng-bind , ng-bind-html
+4. Filters -----  LimitTo, uppercase----
+5. Directives --  
+	a) Buit In - >Any thing start with ng-
+	b) Custom -->
+	c) Third Part ---> Chart, slideshows
+
+6. SPA(Single Page application)
+7. Events ---> $on('eventname', function)
+	a) $emit -->PArents
+	b)$broadcast ->Child
+8. Animations , Charts, Form validations  -->ng-prinstine 
+9. Localstorage, $cacheFactory
+10.Server side Communication --> $http / $resource
+11.i18n
+
+	angualr sort
+	angular bootstrap
+	ng-touch
+	ng-swipe
+
+
+12. Client Side tools
+
+	a) Yomen--- Basic structure
+
+	b) Bower--- Dependencies
+	
+	c) Grunt---  
+
+
+
+
+
+
+
