@@ -67,6 +67,8 @@ MVC MVVM MVW
 	c) Grunt---  
 
 
+npmjs.com
+
 
 
 mongod --dbpath data --storageEngine=mmapv1  -- To Start the mongo database
@@ -87,3 +89,20 @@ npm install  morgan
 
 npm install body-parser --save 
  npm install mongoose
+
+
+nodemon filename.js  --- To found out the syntax errors in file with out any server shut down
+
+websocket
+
+https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+
+
+
+Mocha, Subtest , protatractor---Testing libraries Nodejs
+karma , jasmine --- Testing libraries in Angular JS
+
+
+JSON web token and passport is ---- Security
+
+Mean.js , Mean.io
